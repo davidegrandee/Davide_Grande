@@ -4,11 +4,12 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Allinea il contenuto verso l'alto */
     flex-direction: column;
     min-height: 100vh;
     position: relative;
-    overflow-y: auto;
+    overflow-y: auto; /* Permette lo scroll verticale */
+    padding-top: 120px; /* Distanza per evitare che il contenuto venga nascosto sotto l'header fisso */
 }
 
 body::before {
@@ -21,6 +22,32 @@ body::before {
     background: radial-gradient(circle, rgba(75,0,130,0.5) 10%, rgba(0,0,0,0.9) 90%);
     z-index: -1;
     animation: backgroundAnimation 10s infinite alternate;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2F4F4F; /* Blu scuro */
+    color: #FFD700; /* Colore dorato per il testo */
+    font-size: 22px;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #FFD700; /* Bordo dorato in basso */
+    box-sizing: border-box;
+    z-index: 1000; /* Assicura che l'header sia sopra al resto della pagina */
+}
+
+header h1 {
+    font-size: 28px; /* Aumenta la dimensione del titolo */
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 18px; /* Dimensione del sottotitolo */
+    font-style: italic; /* Elegante */
 }
 
 h1 {
@@ -53,6 +80,7 @@ ul li {
 
 .container {
     max-width: 600px;
+    width: 100%;
     margin: 0 auto;
     padding: 20px;
     background-color: #003366; /* Blu scuro */
@@ -63,8 +91,11 @@ ul li {
     z-index: 1;
     border: 3px solid #FFD700; /* Bordo dorato */
     box-sizing: border-box;
+    max-height: 90vh; /* Limita l'altezza massima del contenitore per lasciare spazio per lo scroll */
+    overflow-y: auto; /* Abilita lo scroll solo all'interno del contenitore, se il contenuto eccede */
 }
 
+/* Stili per le finestre (toggle-section) */
 .toggle-section {
     cursor: pointer;
     font-size: 20px;
@@ -73,20 +104,21 @@ ul li {
     color: #FF1493; /* Fucsia neon per un effetto più accattivante */
 }
 
+.toggle-section:hover {
+    color: #00FFFF; /* Cambio colore al passaggio del mouse (Cyan) */
+    text-shadow: 0 0 10px #00FFFF; /* Effetto glow sul testo */
+}
+
 .content {
     margin-top: 10px;
     font-size: 18px;
+    max-height: none; /* Permette che il contenuto delle finestre non abbia un limite fisso */
 }
 
 /* Sezione espansa */
 .content:not(.hidden) {
     margin-top: 20px;
     padding-bottom: 20px;
-}
-
-.toggle-section:hover {
-    color: #00FFFF; /* Cambio colore al passaggio del mouse (Cyan) */
-    text-shadow: 0 0 10px #00FFFF; /* Effetto glow sul testo */
 }
 
 .arrow {
