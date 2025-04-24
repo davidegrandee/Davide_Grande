@@ -121,7 +121,7 @@ p {
     display: none;
 }
 
-.link-container {
+.link-box {
     display: inline-block;
     background: linear-gradient(135deg, #007bff, #0033cc);
     padding: 14px 22px;
@@ -139,27 +139,27 @@ p {
     box-sizing: border-box;
 }
 
-.link-container:hover {
+.link-box:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     background: linear-gradient(135deg, #ffffff, #007bff);
     color: #003366;
 }
 
-.link-container a {
+.link-box a {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
 }
 
-#i-miei-social {
+#my-socials {
     padding-top: 0;
 }
 
-#i-miei-social h2 {
+#my-socials h2 {
     margin-bottom: 0;
 }
 
-#alcuni-progetti {
+#some-projects {
     margin-top: 10px;
 }

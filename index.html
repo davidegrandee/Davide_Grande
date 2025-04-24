@@ -1,64 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Davide Grande Projects</title>
-    <link rel="icon" href="logo2.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Davide Grande Projects</title>
+  <link rel="icon" href="logo2.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <!-- Open Graph per i social -->
+<meta property="og:title" content="Davide Grande — Progetti digitali e strumenti per la crescita" />
+<meta property="og:description" content="Scopri strumenti innovativi, bot real-time e strategie per piccole imprese. Firmato Davide Grande." />
+<meta property="og:image" content="https://tuosito.it/immagine-social.jpg" />
+<meta property="og:url" content="https://tuosito.it/" />
+<meta property="og:type" content="website" />
 </head>
 <body>
-    <header>
-        <img src="logo2.png" alt="Davide Grande Logo" style="height: 60px; vertical-align: middle;">
+  <header>
+    <div class="header-content">
+      <img src="logo2.png" alt="Davide Grande Logo" class="logo" />
+      <div>
         <h1>Davide Grande</h1>
-        <p>Building ideas that impact</p>
-    </header>
+        <p>Building ideas that make an impact</p>
+      </div>
+    </div>
+    <button id="darkModeToggle">🌙 Dark Mode</button>
+  </header>
 
-    <main class="container">
-        <section id="intro">
-            <h2>Welcome</h2>
-            <p>This site showcases all the active and upcoming projects by Davide Grande.</p>
-        </section>
+  <main class="container">
+    <!-- Intro -->
+    <section id="intro">
+      <h2>Welcome</h2>
+      <p>This site showcases all the active and upcoming projects by Davide Grande — a young digital entrepreneur focused on impactful innovation, real-time tools, and growth for local businesses.</p>
+    </section>
 
-        <section id="alcuni-progetti">
-            <h2>Projects</h2>
+    <!-- Projects -->
+    <section id="projects">
+      <h2>My Projects</h2>
 
-            <div class="toggle-section" onclick="toggleContent('project1')">
-                SnipForceBot <span class="arrow">▼</span>
-            </div>
-            <div id="project1" class="content hidden">
-                <p>SnipForceBot is a real-time Discord bot that monitors new Vinted listings and alerts users instantly.</p>
-                <div class="link-container"><a href="#">View Project</a></div>
-            </div>
+      <div class="toggle-section" onclick="toggleContent('project1')">
+        SnipForceBot <span class="arrow">▼</span>
+      </div>
+      <div id="project1" class="content hidden">
+        <p>SnipForceBot is a real-time Discord bot that scans Vinted for the latest deals and notifies users instantly. It’s fast, automatic, and active 24/7.</p>
+        <div class="link-container"><a href="#">View Project</a></div>
+      </div>
 
-            <div class="toggle-section" onclick="toggleContent('project2')">
-                Puro Impatto <span class="arrow">▼</span>
-            </div>
-            <div id="project2" class="content hidden">
-                <p>Puro Impatto is a motivational and current affairs Instagram page connecting history to today.</p>
-                <div class="link-container"><a href="#">Visit Instagram</a></div>
-            </div>
+      <div class="toggle-section" onclick="toggleContent('project2')">
+        Puro Impatto <span class="arrow">▼</span>
+      </div>
+      <div id="project2" class="content hidden">
+        <p>Puro Impatto is an Instagram page combining motivation, history, and current events. Each post aims to inspire and inform with powerful visuals and stories.</p>
+        <div class="link-container"><a href="#">Visit Instagram</a></div>
+      </div>
 
-            <div class="toggle-section" onclick="toggleContent('project3')">
-                Web Design for Businesses <span class="arrow">▼</span>
-            </div>
-            <div id="project3" class="content hidden">
-                <p>Helping small businesses grow online through simple, elegant websites and Canva presentations.</p>
-                <div class="link-container"><a href="#">Explore Services</a></div>
-            </div>
-        </section>
+      <div class="toggle-section" onclick="toggleContent('project3')">
+        Web Design for Local Businesses <span class="arrow">▼</span>
+      </div>
+      <div id="project3" class="content hidden">
+        <p>I create simple, elegant websites and visual presentations using HTML and Canva — helping small businesses stand out and grow online effectively.</p>
+        <div class="link-container"><a href="#">Explore Services</a></div>
+      </div>
+    </section>
 
-        <section id="i-miei-social">
-            <h2>Contact & Social</h2>
-            <p>Instagram, email, Discord — coming soon!</p>
-        </section>
-    </main>
+    <!-- Services -->
+    <section id="services">
+      <h2>Services</h2>
+      <p>Here’s what I can do for you:</p>
+      <ul>
+        <li>⚡ Real-time bots for Discord and other platforms</li>
+        <li>📈 Social media strategy and content creation</li>
+        <li>🖥️ Custom websites using Canva & basic HTML</li>
+        <li>🎯 Business presentations tailored to your brand</li>
+        <li>🧠 1-on-1 consulting for digital growth</li>
+      </ul>
+    </section>
 
-    <script>
-        function toggleContent(id) {
-            const content = document.getElementById(id);
-            content.classList.toggle('hidden');
-        }
-    </script>
+    <!-- Newsletter -->
+    <section id="newsletter">
+      <h2>Newsletter</h2>
+      <p>Get updates on trending brands on Vinted and exclusive tips — straight to your inbox!</p>
+      <form id="newsletter-form">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="success-message" style="display:none;">Thanks for subscribing!</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact & Social</h2>
+      <p>Coming soon: Instagram, Discord, and email links.</p>
+      <p>You can reach me at: <strong>DavideGrandeProjects@gmail.com</strong></p>
+    </section>
+  </main>
 </body>
 </html>
