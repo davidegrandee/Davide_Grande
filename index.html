@@ -2,38 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Davide Grande | Projects</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davide Grande Projects</title>
+    <link rel="icon" href="logo2.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <img src="logo2.png" alt="Davide Grande Logo" style="height: 60px; vertical-align: middle;">
+        <h1>Davide Grande</h1>
+        <p>Building ideas that impact</p>
+    </header>
 
-<header>
-    <h1>Davide Grande - Projects Portfolio</h1>
-</header>
+    <main class="container">
+        <section id="intro">
+            <h2>Welcome</h2>
+            <p>This site showcases all the active and upcoming projects by Davide Grande.</p>
+        </section>
 
-<nav>
-    <a href="#pure-impacts">Puro Impatto</a>
-    <a href="#business-growth">Business Growth (Davide Grande)</a>
-</nav>
+        <section id="alcuni-progetti">
+            <h2>Projects</h2>
 
-<main>
+            <div class="toggle-section" onclick="toggleContent('project1')">
+                SnipForceBot <span class="arrow">▼</span>
+            </div>
+            <div id="project1" class="content hidden">
+                <p>SnipForceBot is a real-time Discord bot that monitors new Vinted listings and alerts users instantly.</p>
+                <div class="link-container"><a href="#">View Project</a></div>
+            </div>
 
-    <section id="pure-impacts">
-        <h2>Puro Impatto</h2>
-        <p>A motivational and current affairs project on Instagram. Weekly content includes motivational posts and historical insights that connect to present-day events. Future plans include selling posters, t-shirts, and offering digital products.</p>
-    </section>
+            <div class="toggle-section" onclick="toggleContent('project2')">
+                Puro Impatto <span class="arrow">▼</span>
+            </div>
+            <div id="project2" class="content hidden">
+                <p>Puro Impatto is a motivational and current affairs Instagram page connecting history to today.</p>
+                <div class="link-container"><a href="#">Visit Instagram</a></div>
+            </div>
 
-    <section id="business-growth">
-        <h2>Business Growth (Davide Grande)</h2>
-        <p>A personal project aimed at helping small businesses grow online. Services include website creation, Canva presentations, and social media strategies. Started through word-of-mouth, especially in the construction industry.</p>
-    </section>
+            <div class="toggle-section" onclick="toggleContent('project3')">
+                Web Design for Businesses <span class="arrow">▼</span>
+            </div>
+            <div id="project3" class="content hidden">
+                <p>Helping small businesses grow online through simple, elegant websites and Canva presentations.</p>
+                <div class="link-container"><a href="#">Explore Services</a></div>
+            </div>
+        </section>
 
-</main>
+        <section id="i-miei-social">
+            <h2>Contact & Social</h2>
+            <p>Instagram, email, Discord — coming soon!</p>
+        </section>
+    </main>
 
-<footer>
-    <p>&copy; 2025 Davide Grande. All rights reserved.</p>
-</footer>
-
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
