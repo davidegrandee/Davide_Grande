@@ -1,38 +1,172 @@
 body {
+    background-color: #1a1a1a;
+    color: #ffffff;
     font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Allinea il contenuto verso l'alto */
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    overflow-y: auto; /* Permette lo scroll verticale */
+    padding-top: 120px; /* Distanza per evitare che il contenuto venga nascosto sotto l'header fisso */
 }
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(75,0,130,0.5) 10%, rgba(0,0,0,0.9) 90%);
+    z-index: -1;
+    animation: backgroundAnimation 10s infinite alternate;
+}
+
 header {
-    background-color: #111;
-    color: gold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2F4F4F; /* Blu scuro */
+    color: #FFD700; /* Colore dorato per il testo */
+    font-size: 22px;
     padding: 20px;
     text-align: center;
+    border-bottom: 3px solid #FFD700; /* Bordo dorato in basso */
+    box-sizing: border-box;
+    z-index: 1000; /* Assicura che l'header sia sopra al resto della pagina */
 }
-nav {
-    background-color: #222;
-    padding: 10px;
-    text-align: center;
+
+header h1 {
+    font-size: 28px; /* Aumenta la dimensione del titolo */
+    margin-bottom: 10px;
+    font-weight: bold;
 }
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
+
+header p {
+    font-size: 18px; /* Dimensione del sottotitolo */
+    font-style: italic; /* Elegante */
 }
-main {
-    padding: 30px;
-}
-section {
-    background-color: white;
-    padding: 20px;
+
+h1 {
+    font-size: 36px;
     margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+    color: #FFD700; /* Colore dorato */
 }
-footer {
-    background-color: #111;
-    color: gold;
+
+h2 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #FFD700; /* Colore dorato per i titoli */
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #003366; /* Blu scuro */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
     text-align: center;
-    padding: 10px;
+    position: relative;
+    z-index: 1;
+    border: 3px solid #FFD700; /* Bordo dorato */
+    box-sizing: border-box;
+    max-height: 90vh; /* Limita l'altezza massima del contenitore per lasciare spazio per lo scroll */
+    overflow-y: auto; /* Abilita lo scroll solo all'interno del contenitore, se il contenuto eccede */
+}
+
+/* Stili per le finestre (toggle-section) */
+.toggle-section {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #FF1493; /* Fucsia neon per un effetto più accattivante */
+}
+
+.toggle-section:hover {
+    color: #00FFFF; /* Cambio colore al passaggio del mouse (Cyan) */
+    text-shadow: 0 0 10px #00FFFF; /* Effetto glow sul testo */
+}
+
+.content {
+    margin-top: 10px;
+    font-size: 18px;
+    max-height: none; /* Permette che il contenuto delle finestre non abbia un limite fisso */
+}
+
+/* Sezione espansa */
+.content:not(.hidden) {
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.arrow {
+    margin-left: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.link-container {
+    display: inline-block;
+    background: linear-gradient(135deg, #00FFFF, #FF1493); /* Blu elettrico a fucsia per i link */
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+    margin-top: 15px;
+    box-sizing: border-box;
+    border: 2px solid #FFD700; /* Bordo dorato per i link */
+}
+
+.link-container:hover {
+    transform: scale(1.1); /* Zoom più pronunciato al passaggio */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, #FFD700, #FF1493); /* Inversione gradiente al passaggio */
+}
+
+.link-container a {
+    color: #FFD700; /* Colore dorato per il testo dei link */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#i-miei-social {
+    padding-top: 0;
+}
+
+#i-miei-social h2 {
+    margin-bottom: 0;
+}
+
+#alcuni-progetti {
+    margin-top: 10px;
 }
