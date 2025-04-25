@@ -1,69 +1,80 @@
 const express = require('express');
-const fs = require('fs');
+const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
-const cors = require('cors');
 const bodyParser = require('body-parser');
-const rateLimit = require('express-rate-limit');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Regex per validare l'email
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-// Configura il rate limiter per prevenire abusi
-const limiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minuti
-    max: 100, // Limita ogni IP a 100 richieste per finestra
-    message: 'Too many requests from this IP, please try again later.',
-});
-app.use(limiter);
-
-// Configura il middleware CORS
-app.use(cors({
-    origin: 'https://davidegrandee.github.io/Davide_Grande/', // URL del tuo frontend
-    methods: ['POST', 'GET'], // Consenti i metodi POST e GET
-}));
-
 // Middleware per il parsing del JSON
 app.use(bodyParser.json());
 
-// Percorso per la cartella delle email
-const emailsDir = path.join(__dirname, 'emails');
+// Creare un database SQLite nella directory del progetto
+const dbPath = path.join(__dirname, 'database.sqlite');
+const db = new sqlite3.Database(dbPath);
 
-// Creazione della cartella se non esiste
-if (!fs.existsSync(emailsDir)) {
-    fs.mkdirSync(emailsDir);
-}
+// Creare una tabella per le email (se non esiste)
+db.serialize(() => {
+    db.run(`
+        CREATE TABLE IF NOT EXISTS emails (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            email TEXT NOT NULL UNIQUE,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    `);
+});
 
-// API per salvare un'email
+// Regex per validare il formato dell'email
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Endpoint per salvare un'email
 app.post('/subscribe', (req, res) => {
-    const email = req.body.email; // Ottieni l'email dal corpo della richiesta
+    const email = req.body.email;
 
-    // Verifica che l'email sia stata fornita
     if (!email) {
         return res.status(400).json({ message: 'Email is required.' });
     }
 
-    // Validazione dell'email
     if (!emailRegex.test(email)) {
         return res.status(400).json({ message: 'Invalid email format.' });
     }
 
-    // Nome del file basato sull'email (sostituendo caratteri non validi con "_")
-    const fileName = email.replace(/[^a-zA-Z0-9]/g, '_') + '.txt';
-    const filePath = path.join(emailsDir, fileName);
+    // Inserire l'email nel database
+    const sql = `INSERT INTO emails (email) VALUES (?)`;
+    db.run(sql, [email], function (err) {
+        if (err) {
+            if (err.code === 'SQLITE_CONSTRAINT') {
+                // Email già esistente
+                return res.status(409).json({ message: 'Email already subscribed.' });
+            }
+            return res.status(500).json({ message: 'Database error.' });
+        }
 
-    // Verifica se l'email è già stata salvata
-    if (fs.existsSync(filePath)) {
-        return res.status(409).json({ message: 'Email already subscribed.' });
-    }
+        // Successo
+        res.status(200).json({ 
+            message: 'Email saved successfully.', 
+            email: email,   // Restituisci l'email come conferma
+            id: this.lastID // Restituisci l'ID del record appena creato
+        });
+    });
+});
 
-    // Salva l'email nel file
-    fs.writeFileSync(filePath, `Email: ${email}`, 'utf-8');
+// Endpoint per recuperare tutte le email
+app.get('/emails', (req, res) => {
+    const sql = `SELECT * FROM emails ORDER BY created_at DESC`;
 
-    // Risposta di successo
-    res.status(200).json({ message: 'Email saved successfully.' });
+    db.all(sql, [], (err, rows) => {
+        if (err) {
+            return res.status(500).json({ message: 'Database error.' });
+        }
+
+        res.status(200).json(rows);
+    });
+});
+
+// Endpoint per verificare che il server sia attivo
+app.get('/', (req, res) => {
+    res.status(200).send('Server is running. Use /subscribe to POST emails or /emails to GET all emails.');
 });
 
 // Avvio del server

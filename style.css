@@ -13,6 +13,17 @@ body {
     padding: 20px; /* Aggiunge padding al corpo */
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main.container {
+    flex: 1;
+}
+
 body::before {
     content: "";
     position: fixed;
@@ -25,14 +36,31 @@ body::before {
     animation: backgroundAnimation 10s infinite alternate;
 }
 
-.counter {
-    font-size: 2rem;
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
     margin-top: 20px;
-    color: #00d4ff;
-    text-shadow: 1px 1px 2px #003366;
-    margin-bottom: 1rem;
-    animation: fadeIn 2s ease-in-out; /* Aggiunta animazione di apparizione */
-}
+  }
+  
+  .service-card {
+    background-color: #001f3f;
+    padding: 15px 25px;
+    border: 2px solid #00d4ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s, background-color 0.3s;
+    font-size: 1.1rem;
+    cursor: pointer;
+    max-width: 90%;
+  }
+  
+  .service-card:hover {
+    background-color: #00d4ff;
+    color: #001f3f;
+    transform: scale(1.05);
+  }  
 
 @keyframes backgroundAnimation {
     0% {
@@ -154,36 +182,35 @@ header .nav-links a {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px; /* Ridotto per schermi più piccoli */
+    gap: 15px;
     margin-top: 15px;
+    flex-wrap: wrap; /* Se serve adattarsi su schermi piccoli */
 }
 
 .social-links a {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 40px; /* Ridotto per schermi più piccoli */
-    height: 40px;
-    background-color: #001f3f; /* Base background color */
-    color: #ffffff; /* Icon color */
-    border-radius: 50%; /* Circular buttons */
-    text-decoration: none; /* Remove underline */
-    font-size: 20px; /* Adjust icon size */
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-    text-align: center; /* Centra i link */
+    gap: 8px; /* Spazio tra icona e testo */
+    padding: 10px 10px;
+    background-color: #001f3f;
+    color: #ffffff;
+    border-radius: 999px; /* Bordi molto arrotondati (pillola) */
+    text-decoration: none;
+    font-size: 16px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .social-links a:hover {
-    background-color: #00d4ff; /* Change background on hover */
-    color: #001f3f; /* Change icon color on hover */
-    transform: scale(1.1); /* Slight enlargement on hover */
+    background-color: #00d4ff;
+    color: #001f3f;
+    transform: scale(1.05);
 }
 
 .social-links a img {
-    width: 20px; /* Ridotto per schermi più piccoli */
-    height: 20px;
-    filter: invert(1); /* Invert colors for light icons */
+    width: 70px;
+    height: 70px;
+    filter: invert(1);
 }
 
 /* Portfolio Section */
@@ -205,15 +232,17 @@ header .nav-links a {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s;
 }
-
 /* Footer Section */
 footer {
-    text-align: center; /* Centra il testo */
-    padding: 15px; /* Ridotto per schermi più piccoli */
+    text-align: center;
+    padding: 15px;
     background: #001f3f;
     color: #ffffff;
-    font-size: 12px; /* Ridotto per schermi più piccoli */
-    white-space: normal; /* Permette il testo di andare a capo */
+    font-size: 20px;
+    white-space: normal;
+    width: 100%;
+    position: relative; 
+    margin-top: auto;
 }
 
 /* Media Queries for Responsive Design */
