@@ -2,17 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Davide Grande Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Davide Grande - Digital Projects & Growth Solutions</title>
   <link rel="icon" href="logo2.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
-  <!-- Open Graph per i social -->
-<meta property="og:title" content="Davide Grande — Progetti digitali e strumenti per la crescita" />
-<meta property="og:description" content="Scopri strumenti innovativi, bot real-time e strategie per piccole imprese. Firmato Davide Grande." />
-<meta property="og:image" content="https://tuosito.it/immagine-social.jpg" />
-<meta property="og:url" content="https://tuosito.it/" />
-<meta property="og:type" content="website" />
 </head>
 <body>
   <header>
@@ -20,78 +14,79 @@
       <img src="logo2.png" alt="Davide Grande Logo" class="logo" />
       <div>
         <h1>Davide Grande</h1>
-        <p>Building ideas that make an impact</p>
+        <p>Digital Innovation for Real-World Impact</p>
       </div>
     </div>
-    <button id="darkModeToggle">🌙 Dark Mode</button>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#intro">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
+  <!-- Google Translate Widget -->
+  <div id="google_translate_element"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'it,en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
   <main class="container">
-    <!-- Intro -->
     <section id="intro">
       <h2>Welcome</h2>
-      <p>This site showcases all the active and upcoming projects by Davide Grande — a young digital entrepreneur focused on impactful innovation, real-time tools, and growth for local businesses.</p>
+      <p>Discover the innovative projects of Davide Grande, a digital entrepreneur dedicated to creating impactful tools, real-time solutions, and growth strategies for small businesses.</p>
+      <div class="cta-button"><a href="#contact">Let's Work Together</a></div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects">
-      <h2>My Projects</h2>
-
-      <div class="toggle-section" onclick="toggleContent('project1')">
-        SnipForceBot <span class="arrow">▼</span>
-      </div>
-      <div id="project1" class="content hidden">
-        <p>SnipForceBot is a real-time Discord bot that scans Vinted for the latest deals and notifies users instantly. It’s fast, automatic, and active 24/7.</p>
-        <div class="link-container"><a href="#">View Project</a></div>
-      </div>
-
-      <div class="toggle-section" onclick="toggleContent('project2')">
-        Puro Impatto <span class="arrow">▼</span>
-      </div>
-      <div id="project2" class="content hidden">
-        <p>Puro Impatto is an Instagram page combining motivation, history, and current events. Each post aims to inspire and inform with powerful visuals and stories.</p>
-        <div class="link-container"><a href="#">Visit Instagram</a></div>
-      </div>
-
-      <div class="toggle-section" onclick="toggleContent('project3')">
-        Web Design for Local Businesses <span class="arrow">▼</span>
-      </div>
-      <div id="project3" class="content hidden">
-        <p>I create simple, elegant websites and visual presentations using HTML and Canva — helping small businesses stand out and grow online effectively.</p>
-        <div class="link-container"><a href="#">Explore Services</a></div>
-      </div>
-    </section>
-
-    <!-- Services -->
     <section id="services">
-      <h2>Services</h2>
-      <p>Here’s what I can do for you:</p>
+      <h2>My Expertise</h2>
       <ul>
-        <li>⚡ Real-time bots for Discord and other platforms</li>
-        <li>📈 Social media strategy and content creation</li>
-        <li>🖥️ Custom websites using Canva & basic HTML</li>
-        <li>🎯 Business presentations tailored to your brand</li>
-        <li>🧠 1-on-1 consulting for digital growth</li>
+        <li>🌍 Professional Websites for Local Businesses</li>
+        <li>📱 Social Media Management & Strategy</li>
+        <li>🎨 Expert Use of Canva for Visual Content Creation</li>
       </ul>
     </section>
 
-    <!-- Newsletter -->
-    <section id="newsletter">
-      <h2>Newsletter</h2>
-      <p>Get updates on trending brands on Vinted and exclusive tips — straight to your inbox!</p>
-      <form id="newsletter-form">
-        <input type="email" placeholder="Enter your email" required />
-        <button type="submit">Subscribe</button>
-      </form>
-      <p class="success-message" style="display:none;">Thanks for subscribing!</p>
-    </section>
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div id="portfolio-container">
+          <div class="portfolio-item">
+            <h3>Nero Caffe</h3>
+            <p>A coffee shop project where I implemented a user-friendly website to promote the brand, showcase its offerings, and enhance customer engagement.</p>
+            <a href="https://davidegrandee.github.io/Nero-Caff-/" target="_blank">Learn More</a>
+          </div>
+          <div class="portfolio-item">
+            <h3>Puro Impatto</h3>
+            <p>An Instagram page focused on motivation, history, and current events, combining powerful visuals and storytelling to inspire and educate.</p>
+            <a href="https://instagram.com" target="_blank">Visit Instagram</a>
+          </div>
+        </div>
+      </section>
 
-    <!-- Contact -->
-    <section id="contact">
-      <h2>Contact & Social</h2>
-      <p>Coming soon: Instagram, Discord, and email links.</p>
-      <p>You can reach me at: <strong>DavideGrandeProjects@gmail.com</strong></p>
-    </section>
-  </main>
+      <section id="contact">
+        <h2>Contact & Social Links</h2>
+        <div class="social-links">
+          <a href="https://www.instagram.com/davide_grande_/">
+            <img src="logo_instagram.png" alt="Instagram" />
+          </a>
+          <a href="https://discord.gg/X8kEprE8se">
+            <img src="logo_discord.png" alt="Discord" />
+          </a>
+        </div>
+      </section>
+    </main>
+  
+    <footer>
+      <p>&copy; 2025 Davide Grande. All Rights Reserved. Powered by Passion & Innovation.</p>
+    </footer>
 </body>
 </html>
