@@ -250,7 +250,13 @@ footer {
 
     /* Footer Section */
     footer {
-        padding: 10px 15px; /* Riduce il padding */
+        width: 100%; /* Assicura che il footer occupi tutta la larghezza */
+        position: fixed; /* Mantiene il footer fisso in basso */
+        bottom: 0; /* Posiziona il footer in basso */
+        z-index: 2; /* Assicura che il footer sia sopra altri elementi */
+        box-shadow: #001f3f 0 -4px 10px rgba(0, 0, 0, 0.2); /* Ombra per il footer */
+        color: #ffffff; /* Colore del testo del footer */
+        padding: 10px 705px; /* Riduce il padding */
         font-size: 12px; /* Riduce la dimensione del testo */
         text-align: center; /* Centra il contenuto */
         word-wrap: break-word; /* Permette al testo di andare a capo */
