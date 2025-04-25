@@ -3,95 +3,110 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Compatibilità con Internet Explorer -->
-        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>Davide Grande - Digital Projects & Growth Solutions</title>
-      
+
         <!-- Favicon -->
         <link rel="icon" href="logo2.png" type="image/png" />
         <link rel="shortcut icon" href="logo2.png" type="image/x-icon" />
-      
+
         <!-- CSS -->
         <link rel="stylesheet" href="style.css">
-      
-        <!-- Open Graph Meta Tags (Social Media Sharing) -->
+
+        <!-- JAVASCRIPT -->
+        <script type="text/javascript" src="main.js"></script>
+        <script type="text/javascript" src="portfolio.js"></script>
+        <script type="text/javascript" src="newsletter.js"></script>
+        <script type="text/javascript" src="google_translate.js"></script>
+        <!-- Open Graph Meta Tags -->
         <meta property="og:title" content="Davide Grande - Digital Projects & Growth Solutions" />
         <meta property="og:description" content="Explore cutting-edge tools, real-time bots, and strategies for small business growth by Davide Grande." />
         <meta property="og:image" content="logo2.png" />
         <meta property="og:url" content="https://davidegrandee.github.io/Davide_Grande/" />
-      
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-      
-        <!-- JavaScript -->
-        <script src="script.js" defer></script>
-      
+
         <!-- SEO -->
         <meta name="description" content="Explore cutting-edge tools, innovative projects, and growth strategies for small businesses by Davide Grande." />
         <meta name="keywords" content="Digital Projects, Growth Solutions, Davide Grande, Small Business, Web Development, Social Media" />
         <meta name="author" content="Davide Grande" />
-      </head>
-<body>
-  <header>
-    <div class="header-content">
-      <img src="logo2.png" alt="Davide Grande Logo" class="logo" />
-      <div>
-        <h1 class="notranslate">Davide Grande</h1>
-        <p>Digital Innovation for Real-World Impact</p>
-      </div>
-    </div>
-  </header>
+    </head>
+    <body>
+        <header>
+            <div class="header-content">
+                <img src="logo2.png" alt="Davide Grande Logo" class="logo" />
+                <div>
+                    <h1 class="notranslate">Davide Grande</h1>
+                    <p>Digital Innovation for Real-World Impact</p>
+                </div>
+            </div>
+        </header>
 
-  <!-- Google Translate Widget -->
-  <div id="google_translate_element"></div>
+        <!-- Google Translate Widget -->
+        <div id="google_translate_element"></div>
 
-  <main class="container">
-    <section>
-      <h2>Welcome</h2>
-      <p>Discover the innovative projects of Davide Grande, a digital entrepreneur dedicated to creating impactful tools, real-time solutions, and growth strategies for small businesses.</p>
-      <div class="cta-button"><a href="#contact">Let's Work Together</a></div>
-    </section>
+        <main class="container">
+            <section>
+                <h2>Welcome</h2>
+                <p>Discover the innovative projects of Davide Grande, a digital entrepreneur dedicated to creating impactful tools, real-time solutions, and growth strategies for small businesses.</p>
+            </section>
 
-    <section>
-      <h2>My Services</h2>
-      <ul>
-        <li>🌍 Professional Websites for Local Businesses</li>
-        <li>📱 Social Media Management & Strategy</li>
-        <li>🎨 Expert Use of Canva for Visual Content Creation</li>
-      </ul>
-    </section>
+            <section>
+                <h2>My Services</h2>
+                <ul>
+                    <li>🌍 Professional Websites for Local Businesses</li>
+                    <li>📱 Social Media Management & Strategy</li>
+                    <li>🎨 Expert Use of Canva for Visual Content Creation</li>
+                </ul>
+            </section>
 
-    <section>
-      <h2>Portfolio</h2>
-      <div id="portfolio-container">
-        <div class="portfolio-item">
-          <h3>Nero Caffe</h3>
-          <p>A coffee shop project where I implemented a user-friendly website to promote the brand, showcase its offerings, and enhance customer engagement.</p>
-          <a href="https://davidegrandee.github.io/Nero-Caff-/" target="_blank">Learn More</a>
-        </div>
-        <div class="portfolio-item">
-          <h3>Puro Impatto</h3>
-          <p>An Instagram page focused on motivation, history, and current events, combining powerful visuals and storytelling to inspire and educate.</p>
-          <a href="https://instagram.com" target="_blank">Visit Instagram</a>
-        </div>
-      </div>
-    </section>
+            <section>
+                <h2>Portfolio</h2>
+                <div id="portfolio-container">
+                    <div class="portfolio-item">
+                        <h3>Nero Caffe</h3>
+                        <p>A coffee shop project where I implemented a user-friendly website to promote the brand, showcase its offerings, and enhance customer engagement.</p>
+                        <div class="cta-button"><a href="https://davidegrandee.github.io/Nero-Caff-/" target="_blank">Learn More</a></div>
+                    </div>
+                    <div class="portfolio-item">
+                        <h3>Puro Impatto</h3>
+                        <p>An Instagram page focused on motivation, history, and current events, combining powerful visuals and storytelling to inspire and educate.</p>
+                        <div class="cta-button"><a href="https://instagram.com" target="_blank">Visit Instagram</a></div>
+                    </div>
+                </div>
+            </section>
 
-    <section>
-      <h2>Contact & Social Links</h2>
-      <div class="social-links">
-        <a href="https://www.instagram.com/puroimpatto/">
-          <img src="logo_instagram.png" alt="Instagram" />
-        </a>
-        <a href="https://discord.gg/X8kEprE8se">
-          <img src="logo_discord.png" alt="Discord" />
-        </a>
-      </div>
-    </section>
-  </main>
-  
-  <footer>
-    <p>&copy; 2025 Davide Grande. All Rights Reserved. Powered by Passion & Innovation.</p>
-  </footer>
-</body>
+            <section>
+                <h2>Iscriviti alla Newsletter</h2>
+                <p>Resta aggiornato sui miei progetti e soluzioni per la crescita digitale.</p>
+                <form id="newsletter-form">
+                    <input type="email" name="email" placeholder="Inserisci la tua email" required />
+                    <button type="submit">Iscriviti</button>
+                </form>
+                <p class="success-message" style="display: none; color: green;">
+                    Grazie per esserti iscritto!
+                </p>
+            </section>
+
+            <section>
+                <h2>Contact & Social Links</h2>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/puroimpatto/">
+                        <img src="logo_instagram.png" alt="Instagram" />
+                    </a>
+                    <a href="https://discord.gg/X8kEprE8se">
+                        <img src="logo_discord.png" alt="Discord" />
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Davide Grande. All Rights Reserved. Powered by Passion & Innovation.</p>
+        </footer>
+
+        <!-- Link to the external JavaScript file -->
+        <script src="main.js" defer></script>
+    </body>
 </html>

@@ -10,6 +10,7 @@ body {
     align-items: center;
     min-height: 100vh;
     text-align: center; /* Centra tutto il testo nel corpo */
+    padding: 20px; /* Aggiunge padding al corpo */
 }
 
 body::before {
@@ -22,6 +23,15 @@ body::before {
     background: radial-gradient(circle, rgba(0,123,255,0.4) 10%, rgba(0,0,0,0.85) 90%);
     z-index: -1;
     animation: backgroundAnimation 10s infinite alternate;
+}
+
+.counter {
+    font-size: 2rem;
+    margin-top: 20px;
+    color: #00d4ff;
+    text-shadow: 1px 1px 2px #003366;
+    margin-bottom: 1rem;
+    animation: fadeIn 2s ease-in-out; /* Aggiunta animazione di apparizione */
 }
 
 @keyframes backgroundAnimation {
