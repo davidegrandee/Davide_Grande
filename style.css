@@ -96,12 +96,38 @@ body.intro-lock { overflow: hidden; }
 .nav-links { display: flex; align-items: center; gap: 22px; }
 
 /* === HAMBURGER solo su mobile === */
-@media (max-width: 768px){
-  .nav-links{ display:none; }
-  .hamburger{ display:block; }
+/* Hamburger (mobile only) */
+.hamburger {
+  display: none;                /* nascosto di default */
+  position: relative;
+  width: 44px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  z-index: 200;                 /* sopra il menu */
 }
 
-/* === Drawer FULL SCREEN su mobile === */
+.hamburger span {
+  position: absolute;
+  left: 9px;
+  right: 9px;
+  height: 2px;
+  background: var(--offwhite);
+  transform-origin: center;
+  transition: .25s ease;
+}
+
+.hamburger span:nth-child(1) { top: 11px; }
+.hamburger span:nth-child(2) { top: 19px; }
+.hamburger span:nth-child(3) { top: 27px; }
+
+/* Mostralo solo su mobile */
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+}
+
 /* === Drawer FULL SCREEN su mobile === */
 .mobile-menu{
   position: fixed;
