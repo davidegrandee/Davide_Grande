@@ -95,12 +95,75 @@ body.intro-lock { overflow: hidden; }
 
 .nav-links { display: flex; align-items: center; gap: 22px; }
 
-/* Hamburger (mobile only) */
-.hamburger{ display:none; position:relative; width:44px; height:40px; border:1px solid var(--line); border-radius:10px; background:transparent; }
-.hamburger span{ position:absolute; left:9px; right:9px; height:2px; background:var(--offwhite); transform-origin:center; transition:.2s; }
-.hamburger span:nth-child(1){ top:11px; }
-.hamburger span:nth-child(2){ top:19px; }
-.hamburger span:nth-child(3){ top:27px; }
+/* === HAMBURGER solo su mobile === */
+@media (max-width: 768px){
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* === Drawer FULL SCREEN su mobile === */
+.mobile-menu{
+  position: fixed;
+  inset: 0;                 /* copre tutto lo schermo */
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10,10,10,.96); /* scuro pieno */
+  backdrop-filter: blur(6px) saturate(140%);
+  border-right: 1px solid var(--line);
+  transform: translateX(100%);    /* fuori dallo schermo a destra */
+  transition: transform .25s ease;
+  z-index: 999;                   /* sopra tutto */
+  padding: 70px 18px 20px;        /* spazio per la X in alto */
+}
+
+/* Stato aperto */
+.mobile-menu.open{ transform: translateX(0); }
+
+/* Bottone chiudi (X) */
+.mobile-menu .close-drawer{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: rgba(20,20,20,.7);
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  display: block;           /* sempre visibile nel drawer */
+  z-index: 1000;
+}
+
+/* Lista link grande e centrata */
+.mobile-menu ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.mobile-menu a{
+  display: block;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font-size: 18px;
+  letter-spacing: .03em;
+}
+
+/* Sfondo dietro al drawer (non indispensabile ora, ma ok) */
+.backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 998;
+}
+
+/* Quando il menu è aperto, nascondi l’hamburger per evitare 2 X */
+.drawer-open .hamburger{ visibility: hidden; }
 
 /* Drawer */
 .mobile-menu{
