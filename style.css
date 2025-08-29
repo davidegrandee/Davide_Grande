@@ -96,37 +96,46 @@ body.intro-lock { overflow: hidden; }
 .nav-links { display: flex; align-items: center; gap: 22px; }
 
 /* === HAMBURGER solo su mobile === */
-/* Hamburger (mobile only) */
-.hamburger {
-  display: none;                /* nascosto di default */
+/* ===== Hamburger (mobile) — fix iOS/Safari ===== */
+.hamburger{
+  display:none;                 /* mostrato solo sotto 768px */
   position: relative;
   width: 44px;
   height: 40px;
+  padding: 0;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: transparent;
+  background: rgba(12,12,12,.6);   /* niente pallino bianco */
   cursor: pointer;
-  z-index: 200;                 /* sopra il menu */
+  z-index: 200;
+  -webkit-appearance: none;     /* fix iOS */
+  appearance: none;             /* fix iOS */
+  outline: none;
 }
 
-.hamburger span {
+.hamburger span{
   position: absolute;
-  left: 9px;
-  right: 9px;
+  left: 8px;
+  right: 8px;
   height: 2px;
   background: var(--offwhite);
-  transform-origin: center;
-  transition: .25s ease;
+  display: block;               /* forza il rendering delle linee */
+  content: "";
+  border-radius: 2px;
+  transform: translateZ(0);     /* evita bug di painting su Safari */
 }
 
-.hamburger span:nth-child(1) { top: 11px; }
-.hamburger span:nth-child(2) { top: 19px; }
-.hamburger span:nth-child(3) { top: 27px; }
+.hamburger span:nth-child(1){ top: 11px; }
+.hamburger span:nth-child(2){ top: 19px; }
+.hamburger span:nth-child(3){ top: 27px; }
 
-/* Mostralo solo su mobile */
-@media (max-width: 768px) {
-  .hamburger { display: block; }
+/* Mostra l’hamburger solo su mobile */
+@media (max-width: 768px){
+  .hamburger{ display: block; }
 }
+
+/* Opzionale: stato “aperto” (se vuoi animare in X, lasciare così per ora) */
+.drawer-open .hamburger{ visibility: hidden; } /* come già fai quando il menu è aperto */
 
 /* === Drawer FULL SCREEN su mobile === */
 .mobile-menu{
