@@ -35,3 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+/* ===== Simple visit counter (CountAPI) ===== */
+const COUNTAPI_NS = 'davidegrandee.github.io';
+const COUNTAPI_KEY = 'Davide_Grande';
+(function updateVisitCounter(){
+  const el = document.getElementById('visit-count');
+  if (!el) return;
+  fetch(`https://api.countapi.xyz/hit/${COUNTAPI_NS}/${COUNTAPI_KEY}`)
+    .then(r => r.json())
+    .then(d => { if (d && typeof d.value === 'number') el.textContent = d.value.toLocaleString('it-IT'); })
+    .catch(() => { el.textContent = '—'; });
+})();
