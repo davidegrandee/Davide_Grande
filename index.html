@@ -2,15 +2,6 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
-  <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-QWZEYQSYD0');
-</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Davide Grande — Calcio Molise, Progetti & Crescita</title>
@@ -34,9 +25,21 @@
 
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
+  <!-- Google Analytics-->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QWZEYQSYD0');
+  </script>
+
 </head>
 
 <body>
+
+  <!-- Skip link -->
+  <a href="#home" class="skip">Salta al contenuto</a>
 
   <!-- Splash / Intro -->
   <div id="intro" class="intro" aria-hidden="true">
@@ -52,9 +55,11 @@
   <header class="nav">
     <div class="container nav-inner">
       <div class="brand-wrap">
-        <img src="1.png" class="nav-logo" alt="Logo Davide Grande">
+        <img src="1.png" class="nav-logo" alt="Logo Davide Grande" width="36" height="36">
         <div class="brand">Davide Grande</div>
       </div>
+
+      <!-- Desktop nav -->
       <nav class="nav-links" aria-label="Navigazione principale">
         <a href="#home">Home</a>
         <a href="#calciomolise">Calcio Molise</a>
@@ -63,7 +68,26 @@
         <a href="#portfolio">Portfolio</a>
         <a class="btn" href="#contatti">Contatti</a>
       </nav>
+
+      <!-- Hamburger (mobile) -->
+      <button class="hamburger" aria-label="Apri menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+
+    <!-- Mobile drawer menu -->
+    <div id="mobile-menu" class="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu">
+      <button class="close-drawer" aria-label="Chiudi menu">×</button>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#calciomolise">Calcio Molise</a></li>
+        <li><a href="#puroimpatto">Puro Impatto</a></li>
+        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a class="btn" href="#contatti">Contatti</a></li>
+      </ul>
+    </div>
+    <div class="backdrop" hidden></div>
   </header>
 
   <!-- HERO -->
@@ -251,7 +275,7 @@
         <article class="tile">
           <h3>Nero Caffè</h3>
           <p>Identità digitale e contenuti per una caffetteria locale.</p>
-          <a class="btn ghost" target="_blank" rel="noopener" href="#" title="Aggiungi qui l'URL Instagram di Nero Caffè">Instagram</a>
+          <a class="btn ghost" target="_blank" rel="noopener" href="https://www.instagram.com/nerocaffe__?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
         </article>
       </div>
     </div>
@@ -291,19 +315,11 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     © 2025 Davide Grande — Tutti i diritti riservati<br>
     <span class="smallcaps">Progetti reali, impatto reale.</span>
-
-    <div class="visit-counter" aria-live="polite">
-      <span class="mono">👥 Visite totali:</span>
-      <span id="visit-count" class="mono">—</span>
-      <noscript>
-        <img src="https://hits.sh/davidegrandee.github.io/Davide_Grande.svg?style=flat-square&label=visite&color=gold" alt="visite totali">
-      </noscript>
-    </div>
   </footer>
-
 
   <!-- Structured data -->
   <script type="application/ld+json">

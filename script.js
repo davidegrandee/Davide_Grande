@@ -34,9 +34,36 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // ===== Mobile drawer menu =====
+  const burger = document.querySelector('.hamburger');
+  const drawer = document.getElementById('mobile-menu');
+  const backdrop = document.querySelector('.backdrop');
+  const closeBtn = document.querySelector('.close-drawer');
+
+  const openDrawer = () => {
+    drawer.classList.add('open');
+    backdrop.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    const first = drawer.querySelector('a'); first && first.focus();
+  };
+  const closeDrawer = () => {
+    drawer.classList.remove('open');
+    backdrop.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    burger.focus();
+  };
+
+  burger && burger.addEventListener('click', openDrawer);
+  closeBtn && closeBtn.addEventListener('click', closeDrawer);
+  backdrop && backdrop.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer(); });
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 });
 
-/* ===== Simple visit counter (CountAPI) ===== */
+/* ===== Visit counter (CountAPI) ===== */
 const COUNTAPI_NS = 'davidegrandee.github.io';
 const COUNTAPI_KEY = 'Davide_Grande';
 (function updateVisitCounter(){
