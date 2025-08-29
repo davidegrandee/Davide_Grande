@@ -102,18 +102,19 @@ body.intro-lock { overflow: hidden; }
 }
 
 /* === Drawer FULL SCREEN su mobile === */
+/* === Drawer FULL SCREEN su mobile === */
 .mobile-menu{
   position: fixed;
   inset: 0;                 /* copre tutto lo schermo */
   width: 100vw;
   height: 100vh;
-  background: rgba(10,10,10,.96); /* scuro pieno */
+  background: rgba(0,0,0,0.95);  /* sfondo nero quasi pieno */
   backdrop-filter: blur(6px) saturate(140%);
-  border-right: 1px solid var(--line);
-  transform: translateX(100%);    /* fuori dallo schermo a destra */
+  transform: translateX(100%);    /* parte nascosto fuori schermo */
   transition: transform .25s ease;
-  z-index: 999;                   /* sopra tutto */
-  padding: 70px 18px 20px;        /* spazio per la X in alto */
+  z-index: 999;                   /* sopra a tutto */
+  padding: 80px 20px 20px;        /* spazio per la X in alto */
+  overflow-y: auto;               /* se i link non ci stanno, scroll */
 }
 
 /* Stato aperto */
@@ -122,27 +123,27 @@ body.intro-lock { overflow: hidden; }
 /* Bottone chiudi (X) */
 .mobile-menu .close-drawer{
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 20px;
+  right: 20px;
   width: 44px;
   height: 44px;
   border-radius: 10px;
   border: 1px solid var(--line);
-  background: rgba(20,20,20,.7);
+  background: rgba(20,20,20,0.9);
   color: #fff;
   font-size: 24px;
   line-height: 1;
-  display: block;           /* sempre visibile nel drawer */
+  display: block;
   z-index: 1000;
 }
 
-/* Lista link grande e centrata */
+/* Lista link */
 .mobile-menu ul{
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 14px;
+  gap: 18px;
 }
 
 .mobile-menu a{
@@ -152,6 +153,8 @@ body.intro-lock { overflow: hidden; }
   border-radius: 12px;
   font-size: 18px;
   letter-spacing: .03em;
+  color: var(--offwhite);   /* testi leggibili */
+  background: rgba(20,20,20,.6);  /* box dietro i link */
 }
 
 /* Sfondo dietro al drawer (non indispensabile ora, ma ok) */
