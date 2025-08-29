@@ -46,13 +46,16 @@ document.addEventListener('DOMContentLoaded', () => {
     backdrop.hidden = false;
     burger.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
+    document.body.classList.add('drawer-open');   // <—
     const first = drawer.querySelector('a'); first && first.focus();
   };
+
   const closeDrawer = () => {
     drawer.classList.remove('open');
     backdrop.hidden = true;
     burger.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    document.body.classList.remove('drawer-open'); // <—
     burger.focus();
   };
 
