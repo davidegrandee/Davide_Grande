@@ -1,83 +1,315 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>Davide Grande - Digital Projects & Growth Solutions</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Davide Grande — Calcio Molise, Progetti & Crescita</title>
 
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="2.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
-    <!-- Favicon & CSS -->
-    <link rel="icon" href="logo.png" type="image/png" />
-    <link rel="stylesheet" href="style.css" />
+  <!-- SEO -->
+  <meta name="description" content="Davide Grande: creator di Calcio Molise e progetti digitali. Strategia, contenuti e crescita per realtà locali.">
+  <meta name="keywords" content="Calcio Molise, Puro Impatto, Davide Grande, progetti digitali, crescita piccole aziende, social media, siti web">
+  <meta name="author" content="Davide Grande">
 
-    <!-- Meta -->
-    <meta name="description" content="Explore premium digital tools and business growth strategies with Davide Grande." />
-    <meta name="keywords" content="Digital Projects, Growth, Davide Grande, Business Development, Web Design" />
-    <meta name="author" content="Davide Grande" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Davide Grande — Calcio Molise, Progetti & Crescita">
+  <meta property="og:description" content="Il progetto principale è Calcio Molise: dal campo ai social, risultati, storie e strategia per un vero business media locale.">
+  <meta property="og:image" content="logo2.png">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <img src="logo.png" alt="Davide Grande Logo" class="logo">
-        <!-- ✅ Widget Google Translate -->
-        <div id="google_translate_element"></div>
-        <div class="title-container">
-            <h1 class="notranslate">Davide Grande</h1>
-            <p>Digital Projects & Growth Solutions</p>
+
+  <!-- Splash / Intro -->
+  <div id="intro" class="intro" aria-hidden="true">
+    <div class="intro-inner" role="dialog" aria-modal="true" aria-labelledby="intro-title">
+      <img src="2.png" class="intro-logo" alt="Logo Davide Grande">
+      <h1 id="intro-title" class="intro-title">Benvenuto</h1>
+      <p class="intro-sub">Entra in uno spazio dove il lavoro silenzioso diventa impatto concreto.</p>
+      <button id="intro-enter" class="btn">Entra</button>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand-wrap">
+        <img src="1.png" class="nav-logo" alt="Logo Davide Grande">
+        <div class="brand">Davide Grande</div>
+      </div>
+      <nav class="nav-links" aria-label="Navigazione principale">
+        <a href="#home">Home</a>
+        <a href="#calciomolise">Calcio Molise</a>
+        <a href="#puroimpatto">Puro Impatto</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#portfolio">Portfolio</a>
+        <a class="btn" href="#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <main id="home" class="hero">
+    <div class="hero-inner">
+      <div class="manifesto">
+        <div class="kicker">Progetti & Crescita</div>
+        <h1>
+          Eleganza. Disciplina. Risultati.<br>
+          <span class="smallcaps">Costruire in silenzio, per fare rumore coi fatti.</span>
+        </h1>
+        <p class="lead">
+          Sono Davide Grande. Il mio progetto principale è <b>Calcio Molise</b>:
+          una media company locale che unisce risultati, storie e contenuti dei campi molisani.
+          Qui trovi visione, strategia e strumenti per trasformare idee in impatto reale.
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="#calciomolise">Scopri Calcio Molise</a>
+          <a class="btn ghost" href="#portfolio">Vedi i progetti</a>
         </div>
-    </header>
+      </div>
+    </div>
+  </main>
 
-    <main class="container">
-        <section>
-            <h2>Welcome</h2>
-            <p>Explore the innovative digital world of Davide Grande. From impactful tools to sleek designs, every project is crafted to help small businesses grow.</p>
-        </section>
+  <!-- CALCIO MOLISE (PRIMARY PROJECT) -->
+  <section id="calciomolise" class="cm-section">
+    <div class="container">
+      <div class="split">
+        <div class="split-text">
+          <h2 class="section-title">Calcio Molise — Media locale, reale</h2>
+          <p class="section-sub">
+            Dall'<b>Eccellenza</b> alla <b>Promozione</b>, fino a D e C per le molisane: risultati,
+            pre-match, highlights, storie, interviste e copertura social in tempo reale.
+          </p>
 
-        <section>
-            <h2>Services</h2>
-            <div class="service-list">
-                <div class="service-card">🌐 Elegant Websites for Local Businesses</div>
-                <div class="service-card">📱 Social Media Strategy & Management</div>
-                <div class="service-card">🎨 Canva Branding & Visual Storytelling</div>
-            </div>
-        </section>
+          <div class="card-list">
+            <article class="card">
+              <h3>Copertura & Format</h3>
+              <ul>
+                <li>Pre-match pubblicati ~<b>1h30–2h</b> prima della prima gara.</li>
+                <li>Risultati live, post-gara, pagelle rapide.</li>
+                <li>Rubrica domenicale: <i>I fatti della settimana</i>.</li>
+                <li>Stories coordinate con countdown e CTA.</li>
+              </ul>
+            </article>
 
-        <section>
-            <h2>Portfolio</h2>
-            <div class="portfolio">
-                <div class="portfolio-item">
-                    <h3>Nero Caffè</h3>
-                    <p>Website design and branding for a premium coffee shop.</p>
-                    <a href="https://www.instagram.com/nerocaffe__/" target="_blank" class="cta-button">Visit Page</a>
-                </div>
-                <div class="portfolio-item">
-                    <h3>Puro Impatto</h3>
-                    <p>A powerful Instagram page combining motivation, history, and modern impact.</p>
-                    <a href="https://www.instagram.com/puroimpatto/" target="_blank" class="cta-button">Visit Page</a>
-                </div>
-            </div>
-        </section>
+            <article class="card">
+              <h3>UGC & Community</h3>
+              <ul>
+                <li><b>Reporter in DM</b>: foto/video da tifosi, calciatori e società.</li>
+                <li>Crediti all’autore, repost su feed/stories.</li>
+                <li>Evidenza Instagram “Invia contenuti”.</li>
+              </ul>
+            </article>
 
-        <section>
-            <h2>Connect</h2>
-            <div class="social-links">
-                <a href="https://www.instagram.com/puroimpatto/"><img src="logo_instagram.png" alt="Instagram" /></a>
-                <a href="https://open.spotify.com/user/cgroacfg2oz2m7t5xuponjs4t"><img src="logo_spotify.png" alt="Spotify" /></a>
-            </div>
-        </section>
-    </main>
+            <article class="card">
+              <h3>Roadmap 2025/26</h3>
+              <ul>
+                <li>Lancio copertura completa da <b>settembre</b>.</li>
+                <li>Settori: Eccellenza & Promozione come priorità.</li>
+                <li>Collab con club locali e partner territoriali.</li>
+                <li>Espansione a newsletter e sito risultati.</li>
+              </ul>
+            </article>
 
-    <footer>
-        <p>&copy; 2025 Davide Grande. Elegance Meets Digital Innovation.</p>
-    </footer>
+            <article class="card">
+              <h3>Monetizzazione</h3>
+              <ul>
+                <li>Pacchetti sponsor locali (mensili & per rubrica).</li>
+                <li>Contenuti branded (matchday, MVP, top-11).</li>
+                <li>Servizi media alle società (grafiche, foto, clip).</li>
+                <li>Prodotti digitali e inserzioni.</li>
+              </ul>
+            </article>
+          </div>
 
-    <!-- ✅ SCRIPT UNIFICATI -->
-    <script src="main.js" defer></script>
-    <script src="portfolio.js" defer></script>
-    <script src="newsletter.js" defer></script>
-    <script src="google_translate.js" defer></script>
+          <div class="cta-row">
+            <a class="btn" target="_blank" rel="noopener" href="https://www.instagram.com/calciomolise_official/">Segui su Instagram</a>
+            <a class="btn ghost" href="#contatti">Proponi una collaborazione</a>
+          </div>
+        </div>
+
+        <div class="split-visual cm-visual" aria-label="Calcio Molise — visual elegante old-money"></div>
+      </div>
+
+      <!-- Mini calendario/info blocco -->
+      <div class="info-grid">
+        <div class="info">
+          <span class="info-kicker">Pianificazione</span>
+          <p>Pre-match ~1h30/2h prima; risultati a fine gara; rubrica domenica h 17:30.</p>
+        </div>
+        <div class="info">
+          <span class="info-kicker">Linea editoriale</span>
+          <p>Elegante, chiara, centrata sul valore: dati, immagini e storie vere.</p>
+        </div>
+        <div class="info">
+          <span class="info-kicker">Call to action</span>
+          <p>Invia contenuti in DM: foto, video, risultati. Diamo voce al tuo campo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PURO IMPATTO (SECONDARY PROJECT) -->
+  <section id="puroimpatto" class="pi-section">
+    <div class="container">
+      <div class="split split-rev">
+        <div class="split-text">
+          <h2 class="section-title">Puro Impatto — Eleganza che resta</h2>
+          <p class="section-sub">
+            Motivazione, storia e attualità con estetica old-money. <b>Eleganza. Disciplina. Risultati.</b>
+            Pubblicazione coerente (lun 17:30) e rubriche a tema per costruire rispetto, non solo visibilità.
+          </p>
+
+          <div class="card-list two">
+            <article class="card">
+              <h3>Linea editoriale</h3>
+              <ul>
+                <li>Post del lunedì (17:30) — mentale/ispirazionale.</li>
+                <li>Giovedì — analogie eleganti (leone/iene, bambù, marmo, falco).</li>
+                <li>Domenica — “I fatti della settimana”.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Stile visivo</h3>
+              <ul>
+                <li>Nero/oro, serif (Cinzel), statue, marmo.</li>
+                <li>Firma: ⚜️ Puro Impatto · Creato da @davide_grande_</li>
+                <li>Stories coordinate con countdown e CTA.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn" target="_blank" rel="noopener" href="https://www.instagram.com/puroimpatto/">Visita Puro Impatto</a>
+          </div>
+        </div>
+
+        <div class="split-visual pi-visual" aria-label="Puro Impatto — visual elegante"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIZI -->
+  <section id="servizi" class="services">
+    <div class="container">
+      <h2 class="section-title center">Servizi</h2>
+      <p class="section-sub center">Soluzioni concrete per realtà locali e progetti personali.</p>
+
+      <div class="grid-3">
+        <div class="svc">
+          <h3>Siti web per attività locali</h3>
+          <p>Design chiaro e veloce, ottimizzato mobile, gestione facile.</p>
+        </div>
+        <div class="svc">
+          <h3>Social Media & Strategia</h3>
+          <p>Piani editoriali, format, campagne e crescita organica.</p>
+        </div>
+        <div class="svc">
+          <h3>Canva Pro</h3>
+          <p>Grafiche eleganti e consistenti con brand identity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <h2 class="section-title">Portfolio</h2>
+
+      <div class="grid-3">
+        <article class="tile">
+          <h3>Calcio Molise</h3>
+          <p>Media locale: risultati, highlights, rubriche e community.</p>
+          <a class="btn" target="_blank" rel="noopener" href="https://www.instagram.com/calciomolise_official/">Apri Instagram</a>
+        </article>
+
+        <article class="tile">
+          <h3>Puro Impatto</h3>
+          <p>Motivazione, eleganza e cultura visiva in stile old-money.</p>
+          <a class="btn ghost" target="_blank" rel="noopener" href="https://www.instagram.com/puroimpatto/">Visita</a>
+        </article>
+
+        <article class="tile">
+          <h3>Nero Caffè</h3>
+          <p>Identità digitale e contenuti per una caffetteria locale.</p>
+          <a class="btn ghost" target="_blank" rel="noopener" href="#" title="Aggiungi qui l'URL Instagram di Nero Caffè">Instagram</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALL FOR CONTENT -->
+  <section class="cta-band">
+    <div class="container cta-band-inner">
+      <div>
+        <h3 class="cta-title">Vuoi diventare parte di Calcio Molise?</h3>
+        <p class="cta-sub">Inviaci foto, video e risultati in DM. Dai visibilità al tuo campo, noi pensiamo al resto.</p>
+      </div>
+      <a class="btn" target="_blank" rel="noopener" href="https://www.instagram.com/calciomolise_official/">Scrivici ora</a>
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+  <section id="contatti" class="contact">
+    <div class="container">
+      <h2 class="section-title center">Contatti & Social</h2>
+
+      <div class="contact-card">
+        <p class="mono">📩 Per collaborazioni, media kit o informazioni:</p>
+        <p class="mono">
+          <b>
+            <a href="mailto:grandedavide6@gmail.com">grandedavide6@gmail.com</a>
+          </b>
+        </p>
+
+        <div class="social-row">
+          <a class="pill" target="_blank" rel="noopener" href="https://www.instagram.com/calciomolise_official/">Instagram Calcio Molise</a>
+          <a class="pill" target="_blank" rel="noopener" href="https://www.instagram.com/davide_grande_/">Instagram Davide</a>
+          <a class="pill" target="_blank" rel="noopener" href="https://www.instagram.com/puroimpatto/">Instagram Puro Impatto</a>
+          <a class="pill" target="_blank" rel="noopener" href="https://open.spotify.com/user/cgroacfg2oz2m7t5xuponjs4t?si=5081bd4c86464d33">Spotify</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Davide Grande — Tutti i diritti riservati<br>
+    <span class="smallcaps">Progetti reali, impatto reale.</span>
+  </footer>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Davide Grande",
+    "url": "https://davidegrandee.github.io/Davide_Grande/",
+    "sameAs": [
+      "https://www.instagram.com/calciomolise_official/",
+      "https://www.instagram.com/davide_grande_/",
+      "https://www.instagram.com/puroimpatto/"
+    ],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Digital creator & media operator",
+      "occupationLocation": {
+        "@type": "Place",
+        "name": "Molise, Italy"
+      }
+    },
+    "knowsAbout": ["Calcio Molise", "Puro Impatto", "social media", "local media", "Canva", "web design"]
+  }
+  </script>
 </body>
 </html>
